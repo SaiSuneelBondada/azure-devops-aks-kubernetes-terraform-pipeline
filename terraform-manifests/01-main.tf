@@ -39,6 +39,7 @@ terraform {
 
 # 2. Terraform Provider Block for AzureRM
 provider "azurerm" {
+   tenant_id = data.azurerm_client_config.current.tenant_id
   subscription_id = "c5e549e4-bba6-4c3e-aab5-a0e80cea5a6e"
   features {
     # Updated as part of June2023 to delete "ContainerInsights Resources" when deleting the Resource Group
@@ -49,7 +50,7 @@ provider "azurerm" {
 }
 
 provider "azuread" { 
-
+ tenant_id = data.azurerm_client_config.current.tenant_id
 }
 # 3. Terraform Resource Block: Define a Random Pet Resource
 resource "random_pet" "aksrandom" {
