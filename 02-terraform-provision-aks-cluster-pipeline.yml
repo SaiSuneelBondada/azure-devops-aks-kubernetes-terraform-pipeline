@@ -57,8 +57,8 @@ stages:
   jobs:
     - deployment: DeployDevAKSCluster
       displayName: DeployDevAKSCluster
-      pool:
-        vmImage: 'ubuntu-latest'
+#      pool:
+#        vmImage: 'ubuntu-latest'
       environment: $(DEV_ENVIRONMENT) 
       strategy:
         runOnce:
